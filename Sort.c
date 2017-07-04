@@ -26,3 +26,25 @@ void ShellSort(int *p,int length)
     }
   }while(delta>1);
 }
+
+void QuickSort(int *p,int left,int rigth)
+{
+  if(left>=rigth)
+    return;
+  int i=left;
+  int j=right;
+  int key=p[left];
+  
+  while(i<j)
+  {
+    while(i<j && key<=p[right])
+      j--;
+    p[i]=p[j];
+    while(i<j && key>=p[i])
+      i++;
+    p[j]=p[i];
+  }
+  p[i]=key;
+  QuickSort(p,left,i-1);
+  QuickSort(p,i+1,right);
+}
