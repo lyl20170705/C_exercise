@@ -48,3 +48,17 @@ void QuickSort(int *p,int left,int rigth)
   QuickSort(p,left,i-1);
   QuickSort(p,i+1,right);
 }
+
+
+void BubbleSort(int *p,int len)
+{
+  int tmp;
+  for(int i=0;i<n-1;i++)
+    for(int j=0;j<n-i;j++)
+      if(p[i]>p[j+1])
+      {
+        tmp=p[j+1];
+        p[j]=p[j+1];
+        p[j+1]=tmp;
+      }
+}
